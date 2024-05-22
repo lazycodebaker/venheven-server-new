@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+
+    <style>
+        @font-face {
+            font-family: 'Monterio';
+            src: url("./Fonts/Monterio-Bold.ttf");
+        }
+
+        @font-face {
+            font-family: 'Tenor Sans';
+            src: url("./Fonts/TenorSans-Regular.ttf");
+        }
+
+        body {
+            font-family: 'Tenor Sans';
+        }
+
+        .monterio {
+            font-family: 'Monterio';
+        }
+
+        .black-bg {
+            background-color: #ffffff;
+        }
+    </style>
+
+    <title>Welcome to {{COMPANYNAME}}</title>
+</head>
+
+<body class="black-bg bg-white text-black">
+    <nav>
+        <div class="px-4 bg-gray-50">
+            <div class="flex justify-center items-center py-4">
+                <div>
+                    <a href="#" class="text-3xl monterio">{{COMPANYNAME}}</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- WELCOME MAIL CONTENT -->
+
+    <div class="px-4">
+        <div class="flex justify-center items-center py-4">
+            <div class="w-full px-6 ">
+                <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 ">
+                    <p class="my-2 text-2xl">
+                        Hi {{USERNAME}}, <br />
+                    </p>
+
+                    <p class="my-2">
+                        Welcome to the world of {{COMPANYNAME}}! Your account has been created with a touch of
+                        exclusivity and luxury.
+                    </p>
+
+                    <div class="my-4">
+                        <h1 class="text-2xl">Get ready for an exceptional experience!</h1>
+                    </div>
+
+                    <div class="my-4">
+                        <p class="text-base">
+                            Explore our premium products and enjoy the unique and luxurious offerings we have just for
+                            you.
+                        </p>
+                    </div>
+
+                    <div class="my-4">
+                        <p class="text-base">
+                            Thank you for choosing {{COMPANYNAME}}! We are thrilled to have you on board and look
+                            forward to providing you with a one-of-a-kind experience.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full px-6">
+            <h1 class="text-5xl monterio">{{COMPANYNAME}}</h1>
+            <p class="text-sm px-2">Feel the Luxury, Wear {{COMPANYNAME}}</p>
+        </div>
+
+        <h1 class="text-center py-4 text-sm">Copyright 2023 All Rights Reserved by {{COMPANYNAME}}</h1>
+    </div>
+
+</body>
+
+</html>

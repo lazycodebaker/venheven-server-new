@@ -1,0 +1,77 @@
+{
+  "data": {
+    "properties": {
+      "session_id": {
+        "name": "session_id",
+        "reference": "scalar",
+        "primary": true,
+        "type": "string",
+        "comment": "The session id"
+      },
+      "user_id": {
+        "name": "user_id",
+        "reference": "scalar",
+        "type": "string",
+        "comment": "The user id associated with the session",
+        "getter": false,
+        "setter": false
+      },
+      "user": {
+        "name": "user",
+        "reference": "1:1",
+        "cascade": [
+          "persist"
+        ],
+        "type": "User",
+        "owner": false,
+        "unique": false
+      },
+      "login_time": {
+        "name": "login_time",
+        "reference": "scalar",
+        "type": "date",
+        "comment": "The login time of the session",
+        "getter": false,
+        "setter": false
+      },
+      "duration": {
+        "name": "duration",
+        "reference": "scalar",
+        "type": "number",
+        "comment": "The duration of the session",
+        "getter": false,
+        "setter": false
+      },
+      "device_info": {
+        "name": "device_info",
+        "reference": "scalar",
+        "type": "object",
+        "comment": "Information about the device used for the session",
+        "getter": false,
+        "setter": false
+      }
+    },
+    "primaryKeys": [
+      "session_id"
+    ],
+    "filters": {},
+    "hooks": {},
+    "indexes": [],
+    "uniques": [],
+    "className": "Session",
+    "path": "./src/models/Session.ts",
+    "collection": "user_session",
+    "name": "Session",
+    "abstract": false,
+    "constructorParams": [
+      "session"
+    ],
+    "toJsonParams": [],
+    "useCache": true,
+    "compositePK": false,
+    "simplePK": true
+  },
+  "origin": "./src/models/Session.ts",
+  "hash": "9d08e7781fa4a395c2f27419f300a9bb",
+  "version": "5.9.0"
+}

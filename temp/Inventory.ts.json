@@ -1,0 +1,67 @@
+{
+  "data": {
+    "properties": {
+      "inventory_id": {
+        "name": "inventory_id",
+        "reference": "scalar",
+        "primary": true,
+        "type": "uuid",
+        "comment": "The inventory id"
+      },
+      "items": {
+        "name": "items",
+        "reference": "1:m",
+        "cascade": [
+          "persist"
+        ],
+        "type": "InventoryItems"
+      },
+      "createdAt": {
+        "name": "createdAt",
+        "reference": "scalar",
+        "type": "datetime",
+        "nullable": true,
+        "comment": "The cart created at",
+        "getter": false,
+        "setter": false,
+        "fieldNames": [
+          "created_at"
+        ]
+      },
+      "updateddAt": {
+        "name": "updateddAt",
+        "reference": "scalar",
+        "type": "datetime",
+        "nullable": true,
+        "comment": "The cart updated at",
+        "getter": false,
+        "setter": false,
+        "fieldNames": [
+          "updated_at"
+        ]
+      }
+    },
+    "primaryKeys": [
+      "inventory_id"
+    ],
+    "filters": {},
+    "hooks": {},
+    "indexes": [],
+    "uniques": [],
+    "className": "Inventory",
+    "path": "./src/models/Inventory.ts",
+    "collection": "inventory",
+    "name": "Inventory",
+    "abstract": false,
+    "constructorParams": [
+      "inventory"
+    ],
+    "toJsonParams": [],
+    "useCache": true,
+    "compositePK": false,
+    "simplePK": true
+  },
+  "origin": "./src/models/Inventory.ts",
+  "hash": "997c2e5df10951444194983d429ee254",
+  "version": "5.9.0"
+}

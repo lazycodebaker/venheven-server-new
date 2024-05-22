@@ -1,0 +1,186 @@
+{
+  "data": {
+    "properties": {
+      "user_id": {
+        "name": "user_id",
+        "reference": "scalar",
+        "primary": true,
+        "type": "uuid",
+        "comment": "The user id"
+      },
+      "username": {
+        "name": "username",
+        "reference": "scalar",
+        "type": "string",
+        "comment": "The user username",
+        "getter": false,
+        "setter": false
+      },
+      "firstname": {
+        "name": "firstname",
+        "reference": "scalar",
+        "type": "string",
+        "comment": "The user firstname",
+        "getter": false,
+        "setter": false
+      },
+      "lastname": {
+        "name": "lastname",
+        "reference": "scalar",
+        "type": "string",
+        "comment": "The user lastname",
+        "getter": false,
+        "setter": false
+      },
+      "email": {
+        "name": "email",
+        "reference": "scalar",
+        "type": "string",
+        "comment": "The user email",
+        "getter": false,
+        "setter": false
+      },
+      "password": {
+        "name": "password",
+        "reference": "scalar",
+        "type": "string",
+        "comment": "The user password",
+        "getter": false,
+        "setter": false
+      },
+      "phoneNumber": {
+        "name": "phoneNumber",
+        "reference": "scalar",
+        "type": "string",
+        "comment": "The user phoneNumber",
+        "getter": false,
+        "setter": false
+      },
+      "isVerified": {
+        "name": "isVerified",
+        "reference": "scalar",
+        "type": "boolean",
+        "comment": "The user is Verified from otp or not",
+        "default": false,
+        "getter": false,
+        "setter": false
+      },
+      "isLoggedin": {
+        "name": "isLoggedin",
+        "reference": "scalar",
+        "type": "boolean",
+        "comment": "The user is Logged in or not",
+        "default": false,
+        "getter": false,
+        "setter": false
+      },
+      "salt": {
+        "name": "salt",
+        "reference": "scalar",
+        "type": "string",
+        "comment": "The user salt for crypto hashing",
+        "getter": false,
+        "setter": false
+      },
+      "otp": {
+        "name": "otp",
+        "reference": "scalar",
+        "type": "string",
+        "comment": "The user otp",
+        "getter": false,
+        "setter": false
+      },
+      "dateOfBirth": {
+        "name": "dateOfBirth",
+        "reference": "scalar",
+        "type": "datetime",
+        "comment": "The user date of birth",
+        "nullable": true,
+        "getter": false,
+        "setter": false,
+        "fieldNames": [
+          "date of birth"
+        ]
+      },
+      "createdAt": {
+        "name": "createdAt",
+        "reference": "scalar",
+        "type": "datetime",
+        "nullable": true,
+        "default": 1716116511523,
+        "getter": false,
+        "setter": false,
+        "fieldNames": [
+          "created_at"
+        ]
+      },
+      "updatedAt": {
+        "name": "updatedAt",
+        "reference": "scalar",
+        "type": "datetime",
+        "nullable": true,
+        "default": 1716116511523,
+        "getter": false,
+        "setter": false,
+        "fieldNames": [
+          "updated_at"
+        ]
+      },
+      "address": {
+        "name": "address",
+        "reference": "1:1",
+        "cascade": [
+          "all"
+        ],
+        "nullable": true,
+        "type": "Address",
+        "owner": true,
+        "unique": true
+      },
+      "cart": {
+        "name": "cart",
+        "reference": "1:1",
+        "cascade": [
+          "all"
+        ],
+        "nullable": true,
+        "type": "Cart",
+        "owner": true,
+        "unique": true
+      },
+      "session": {
+        "name": "session",
+        "reference": "1:1",
+        "cascade": [
+          "all"
+        ],
+        "nullable": true,
+        "type": "Session",
+        "owner": true,
+        "unique": true
+      }
+    },
+    "primaryKeys": [
+      "user_id"
+    ],
+    "filters": {},
+    "hooks": {},
+    "indexes": [],
+    "uniques": [],
+    "className": "User",
+    "path": "./src/models/User.ts",
+    "collection": "users",
+    "name": "User",
+    "abstract": false,
+    "constructorParams": [
+      "user"
+    ],
+    "toJsonParams": [],
+    "useCache": true,
+    "compositePK": false,
+    "simplePK": true
+  },
+  "origin": "./src/models/User.ts",
+  "hash": "518f10b0eb579cee8dfd5ff5715ca829",
+  "version": "5.9.0"
+}

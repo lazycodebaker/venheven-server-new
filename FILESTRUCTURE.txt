@@ -1,0 +1,74 @@
+VENHEVEN SERVER 
+project-root/
+│
+├── src/
+│   ├── config/
+│   │   ├── index.ts         # Configuration files (e.g., database, environment variables)
+│   │
+│   ├── controllers/
+│   │   ├── userController.ts     # Controllers handling business logic
+│   │   ├── productController.ts
+│   │   ├── paymentController.ts
+│   │   ├── ...
+│   │
+│   ├── services/
+│   │   ├── userService.ts    # Service layer handling business operations
+│   │   ├── productService.ts
+│   │   ├── paymentService.ts
+│   │   ├── ...
+│   │
+│   ├── models/
+│   │   ├── User.ts           # TypeORM entities and database models
+│   │   ├── Product.ts
+│   │   ├── Order.ts
+│   │   ├── Payment.ts
+│   │   ├── ...
+│   │
+│   ├── graphql/
+│   │   ├── mutations/
+│   │   │   ├── userMutations.ts    # GraphQL mutations for user-related operations
+│   │   │   ├── productMutations.ts
+│   │   │   ├── paymentMutations.ts
+│   │   │   ├── ...
+│   │   ├── queries/
+│   │   │   ├── userQueries.ts      # GraphQL queries for fetching user data
+│   │   │   ├── productQueries.ts
+│   │   │   ├── ...
+│   │   ├── resolvers/
+│   │   │   ├── userResolvers.ts    # GraphQL resolver functions for user operations
+│   │   │   ├── productResolvers.ts
+│   │   │   ├── paymentResolvers.ts
+│   │   │   ├── ...
+│   │   ├── schemas/
+│   │   │   ├── userSchema.ts       # GraphQL schema definitions for user operations
+│   │   │   ├── productSchema.ts
+│   │   │   ├── paymentSchema.ts
+│   │   │   ├── ...
+│   │
+│   ├── authentication/
+│   │   ├── authMiddleware.ts  # Middleware for authentication and authorization
+│   │   ├── jwtService.ts      # JWT handling and user authentication
+│   │   ├── ...
+│   │
+│   ├── payment/
+│   │   ├── paymentGateway.ts  # Payment gateway integration
+│   │   ├── paymentValidator.ts # Validation for payment transactions
+│   │   ├── ...
+│   │
+│   ├── utils/
+│   │   ├── logger.ts         # Utility functions (e.g., logger, helper functions)
+│   │   ├── errorHandler.ts
+│   │   ├── ...
+│   │
+│   ├── index.ts              # Entry point file to initialize the server
+│   ├── server.ts             # Server setup and configuration
+│   ├── app.ts                # Express application setup
+│
+├── .env                      # Environment variables (not stored in version control)
+├── package.json              # Node.js project dependencies and scripts
+├── tsconfig.json             # TypeScript configuration
+├── .eslintrc                 # ESLint configuration for linting
+├── .prettierrc               # Prettier configuration for code formatting
+├── .gitignore                # Git ignore file
+├── README.md                 # Project documentation and instructions
+├── .editorconfig             # Editor configuration for consistent styles

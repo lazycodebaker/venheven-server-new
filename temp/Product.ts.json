@@ -1,0 +1,139 @@
+{
+  "data": {
+    "properties": {
+      "product_id": {
+        "name": "product_id",
+        "reference": "scalar",
+        "primary": true,
+        "type": "uuid",
+        "comment": "The product id"
+      },
+      "name": {
+        "name": "name",
+        "reference": "scalar",
+        "type": "string",
+        "comment": "The product name",
+        "getter": false,
+        "setter": false
+      },
+      "category": {
+        "name": "category",
+        "reference": "scalar",
+        "type": "string",
+        "comment": "The product category",
+        "getter": false,
+        "setter": false
+      },
+      "description": {
+        "name": "description",
+        "reference": "scalar",
+        "type": "string",
+        "comment": "The product description",
+        "getter": false,
+        "setter": false
+      },
+      "price": {
+        "name": "price",
+        "reference": "scalar",
+        "type": "number",
+        "comment": "The product price",
+        "getter": false,
+        "setter": false
+      },
+      "images": {
+        "name": "images",
+        "reference": "scalar",
+        "type": "array",
+        "comment": "The product images",
+        "getter": false,
+        "setter": false
+      },
+      "videos": {
+        "name": "videos",
+        "reference": "scalar",
+        "type": "array",
+        "comment": "The product videos",
+        "getter": false,
+        "setter": false
+      },
+      "ratings": {
+        "name": "ratings",
+        "reference": "scalar",
+        "type": "object",
+        "comment": "The product ratings",
+        "getter": false,
+        "setter": false
+      },
+      "reviews": {
+        "name": "reviews",
+        "reference": "scalar",
+        "type": "array",
+        "comment": "The product reviews",
+        "getter": false,
+        "setter": false
+      },
+      "attributes": {
+        "name": "attributes",
+        "reference": "scalar",
+        "type": "object",
+        "comment": "The product attributes",
+        "getter": false,
+        "setter": false
+      },
+      "tags": {
+        "name": "tags",
+        "reference": "scalar",
+        "type": "array",
+        "comment": "The product tags",
+        "getter": false,
+        "setter": false
+      },
+      "createdAt": {
+        "name": "createdAt",
+        "reference": "scalar",
+        "type": "datetime",
+        "nullable": true,
+        "default": 1715520212512,
+        "getter": false,
+        "setter": false,
+        "fieldNames": [
+          "created_at"
+        ]
+      },
+      "updateddAt": {
+        "name": "updateddAt",
+        "reference": "scalar",
+        "type": "datetime",
+        "nullable": true,
+        "default": 1715520212513,
+        "getter": false,
+        "setter": false,
+        "fieldNames": [
+          "updated_at"
+        ]
+      }
+    },
+    "primaryKeys": [
+      "product_id"
+    ],
+    "filters": {},
+    "hooks": {},
+    "indexes": [],
+    "uniques": [],
+    "className": "Product",
+    "path": "./src/models/Product.ts",
+    "collection": "products",
+    "name": "Product",
+    "abstract": false,
+    "constructorParams": [
+      "product"
+    ],
+    "toJsonParams": [],
+    "useCache": true,
+    "compositePK": false,
+    "simplePK": true
+  },
+  "origin": "./src/models/Product.ts",
+  "hash": "c2a49ca3d41dd6442f6fbf9d097943ea",
+  "version": "5.9.0"
+}

@@ -1,0 +1,93 @@
+{
+  "data": {
+    "properties": {
+      "address_id": {
+        "name": "address_id",
+        "reference": "scalar",
+        "primary": true,
+        "type": "uuid",
+        "comment": "The address id"
+      },
+      "user_id": {
+        "name": "user_id",
+        "reference": "scalar",
+        "type": "uuid",
+        "comment": "The user id",
+        "getter": false,
+        "setter": false
+      },
+      "user": {
+        "name": "user",
+        "reference": "1:1",
+        "cascade": [
+          "persist"
+        ],
+        "type": "User",
+        "owner": false,
+        "unique": false
+      },
+      "address_line_1": {
+        "name": "address_line_1",
+        "reference": "scalar",
+        "type": "string",
+        "comment": "The address line 1",
+        "getter": false,
+        "setter": false
+      },
+      "city": {
+        "name": "city",
+        "reference": "scalar",
+        "type": "string",
+        "comment": "The address city",
+        "getter": false,
+        "setter": false
+      },
+      "state": {
+        "name": "state",
+        "reference": "scalar",
+        "type": "string",
+        "comment": "The address state",
+        "getter": false,
+        "setter": false
+      },
+      "country": {
+        "name": "country",
+        "reference": "scalar",
+        "type": "string",
+        "comment": "The address country",
+        "getter": false,
+        "setter": false
+      },
+      "pincode": {
+        "name": "pincode",
+        "reference": "scalar",
+        "type": "string",
+        "comment": "The address pincode",
+        "getter": false,
+        "setter": false
+      }
+    },
+    "primaryKeys": [
+      "address_id"
+    ],
+    "filters": {},
+    "hooks": {},
+    "indexes": [],
+    "uniques": [],
+    "className": "Address",
+    "path": "./src/models/Address.ts",
+    "collection": "addresses",
+    "name": "Address",
+    "abstract": false,
+    "constructorParams": [
+      "address"
+    ],
+    "toJsonParams": [],
+    "useCache": true,
+    "compositePK": false,
+    "simplePK": true
+  },
+  "origin": "./src/models/Address.ts",
+  "hash": "54397d8595350e85d789d1f02856a554",
+  "version": "5.9.0"
+}

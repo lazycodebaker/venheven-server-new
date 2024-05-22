@@ -1,0 +1,80 @@
+{
+  "data": {
+    "properties": {
+      "cart_id": {
+        "name": "cart_id",
+        "reference": "scalar",
+        "primary": true,
+        "type": "uuid",
+        "comment": "The cart id"
+      },
+      "user_id": {
+        "name": "user_id",
+        "reference": "scalar",
+        "type": "uuid",
+        "comment": "Cart user ( owner ) id",
+        "getter": false,
+        "setter": false
+      },
+      "user": {
+        "name": "user",
+        "reference": "1:1",
+        "cascade": [
+          "persist"
+        ],
+        "owner": true,
+        "orphanRemoval": true,
+        "type": "User",
+        "unique": true
+      },
+      "items": {
+        "name": "items",
+        "reference": "1:m",
+        "cascade": [
+          "persist"
+        ],
+        "type": "CartItem"
+      },
+      "created_at": {
+        "name": "created_at",
+        "reference": "scalar",
+        "type": "datetime",
+        "nullable": true,
+        "comment": "The cart created at",
+        "getter": false,
+        "setter": false
+      },
+      "updated_at": {
+        "name": "updated_at",
+        "reference": "scalar",
+        "type": "datetime",
+        "nullable": true,
+        "comment": "The cart updated at",
+        "getter": false,
+        "setter": false
+      }
+    },
+    "primaryKeys": [
+      "cart_id"
+    ],
+    "filters": {},
+    "hooks": {},
+    "indexes": [],
+    "uniques": [],
+    "className": "Cart",
+    "path": "./src/models/Cart.ts",
+    "collection": "cart",
+    "name": "Cart",
+    "abstract": false,
+    "constructorParams": [
+      "cart"
+    ],
+    "toJsonParams": [],
+    "useCache": true,
+    "compositePK": false,
+    "simplePK": true
+  },
+  "origin": "./src/models/Cart.ts",
+  "hash": "8b546cc8c0046c7756e9d27df1ac092c",
+  "version": "5.9.0"
+}

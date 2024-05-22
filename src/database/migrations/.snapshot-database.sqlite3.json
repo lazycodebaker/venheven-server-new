@@ -1,0 +1,906 @@
+{
+  "namespaces": [],
+  "tables": [
+    {
+      "columns": {
+        "address_id": {
+          "name": "address_id",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "length": 36,
+          "comment": "The address id",
+          "mappedType": "text"
+        },
+        "user_id": {
+          "name": "user_id",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "length": 36,
+          "comment": "The user id",
+          "mappedType": "text"
+        },
+        "address_line_1": {
+          "name": "address_line_1",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "comment": "The address line 1",
+          "mappedType": "text"
+        },
+        "city": {
+          "name": "city",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "comment": "The address city",
+          "mappedType": "text"
+        },
+        "state": {
+          "name": "state",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "comment": "The address state",
+          "mappedType": "text"
+        },
+        "country": {
+          "name": "country",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "comment": "The address country",
+          "mappedType": "text"
+        },
+        "pincode": {
+          "name": "pincode",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "comment": "The address pincode",
+          "mappedType": "text"
+        }
+      },
+      "name": "addresses",
+      "indexes": [
+        {
+          "keyName": "primary",
+          "columnNames": [
+            "address_id"
+          ],
+          "composite": false,
+          "primary": true,
+          "unique": true
+        }
+      ],
+      "checks": [],
+      "foreignKeys": {}
+    },
+    {
+      "columns": {
+        "inventory_id": {
+          "name": "inventory_id",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "length": 36,
+          "comment": "The inventory id",
+          "mappedType": "text"
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "datetime",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": true,
+          "length": 0,
+          "comment": "The cart created at",
+          "mappedType": "datetime"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "datetime",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": true,
+          "length": 0,
+          "comment": "The cart updated at",
+          "mappedType": "datetime"
+        }
+      },
+      "name": "inventory",
+      "indexes": [
+        {
+          "keyName": "primary",
+          "columnNames": [
+            "inventory_id"
+          ],
+          "composite": false,
+          "primary": true,
+          "unique": true
+        }
+      ],
+      "checks": [],
+      "foreignKeys": {}
+    },
+    {
+      "columns": {
+        "inventory_item_id": {
+          "name": "inventory_item_id",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "length": 36,
+          "comment": "The inventory item id",
+          "mappedType": "text"
+        },
+        "product_id": {
+          "name": "product_id",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "length": 36,
+          "comment": "The product id",
+          "mappedType": "text"
+        },
+        "attributes": {
+          "name": "attributes",
+          "type": "json",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "comment": "The product attributes",
+          "mappedType": "json"
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "datetime",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": true,
+          "length": 0,
+          "default": "1715520212492",
+          "mappedType": "datetime"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "datetime",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": true,
+          "length": 0,
+          "default": "1715520212492",
+          "mappedType": "datetime"
+        },
+        "inventory_inventory_id": {
+          "name": "inventory_inventory_id",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "length": 36,
+          "mappedType": "text"
+        }
+      },
+      "name": "inventory_items",
+      "indexes": [
+        {
+          "columnNames": [
+            "inventory_inventory_id"
+          ],
+          "composite": false,
+          "keyName": "inventory_items_inventory_inventory_id_index",
+          "primary": false,
+          "unique": false
+        },
+        {
+          "keyName": "primary",
+          "columnNames": [
+            "inventory_item_id"
+          ],
+          "composite": false,
+          "primary": true,
+          "unique": true
+        }
+      ],
+      "checks": [],
+      "foreignKeys": {
+        "inventory_items_inventory_inventory_id_foreign": {
+          "constraintName": "inventory_items_inventory_inventory_id_foreign",
+          "columnNames": [
+            "inventory_inventory_id"
+          ],
+          "localTableName": "inventory_items",
+          "referencedColumnNames": [
+            "inventory_id"
+          ],
+          "referencedTableName": "inventory",
+          "updateRule": "cascade"
+        }
+      }
+    },
+    {
+      "columns": {
+        "product_id": {
+          "name": "product_id",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "length": 36,
+          "comment": "The product id",
+          "mappedType": "text"
+        },
+        "name": {
+          "name": "name",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "comment": "The product name",
+          "mappedType": "text"
+        },
+        "category": {
+          "name": "category",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "comment": "The product category",
+          "mappedType": "text"
+        },
+        "description": {
+          "name": "description",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "comment": "The product description",
+          "mappedType": "text"
+        },
+        "price": {
+          "name": "price",
+          "type": "integer",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "comment": "The product price",
+          "mappedType": "integer"
+        },
+        "images": {
+          "name": "images",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "comment": "The product images",
+          "mappedType": "text"
+        },
+        "videos": {
+          "name": "videos",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "comment": "The product videos",
+          "mappedType": "text"
+        },
+        "ratings": {
+          "name": "ratings",
+          "type": "json",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "comment": "The product ratings",
+          "mappedType": "json"
+        },
+        "reviews": {
+          "name": "reviews",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "comment": "The product reviews",
+          "mappedType": "text"
+        },
+        "attributes": {
+          "name": "attributes",
+          "type": "json",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "comment": "The product attributes",
+          "mappedType": "json"
+        },
+        "tags": {
+          "name": "tags",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "comment": "The product tags",
+          "mappedType": "text"
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "datetime",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": true,
+          "length": 0,
+          "default": "1715520212512",
+          "mappedType": "datetime"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "datetime",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": true,
+          "length": 0,
+          "default": "1715520212513",
+          "mappedType": "datetime"
+        }
+      },
+      "name": "products",
+      "indexes": [
+        {
+          "keyName": "primary",
+          "columnNames": [
+            "product_id"
+          ],
+          "composite": false,
+          "primary": true,
+          "unique": true
+        }
+      ],
+      "checks": [],
+      "foreignKeys": {}
+    },
+    {
+      "columns": {
+        "session_id": {
+          "name": "session_id",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "comment": "The session id",
+          "mappedType": "text"
+        },
+        "user_id": {
+          "name": "user_id",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "comment": "The user id associated with the session",
+          "mappedType": "text"
+        },
+        "login_time": {
+          "name": "login_time",
+          "type": "datetime",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "length": 0,
+          "comment": "The login time of the session",
+          "mappedType": "datetime"
+        },
+        "duration": {
+          "name": "duration",
+          "type": "integer",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "comment": "The duration of the session",
+          "mappedType": "integer"
+        },
+        "device_info": {
+          "name": "device_info",
+          "type": "json",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "comment": "Information about the device used for the session",
+          "mappedType": "json"
+        }
+      },
+      "name": "user_session",
+      "indexes": [
+        {
+          "keyName": "primary",
+          "columnNames": [
+            "session_id"
+          ],
+          "composite": false,
+          "primary": true,
+          "unique": true
+        }
+      ],
+      "checks": [],
+      "foreignKeys": {}
+    },
+    {
+      "columns": {
+        "user_id": {
+          "name": "user_id",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "length": 36,
+          "comment": "The user id",
+          "mappedType": "text"
+        },
+        "username": {
+          "name": "username",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "comment": "The user username",
+          "mappedType": "text"
+        },
+        "firstname": {
+          "name": "firstname",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "comment": "The user firstname",
+          "mappedType": "text"
+        },
+        "lastname": {
+          "name": "lastname",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "comment": "The user lastname",
+          "mappedType": "text"
+        },
+        "email": {
+          "name": "email",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "comment": "The user email",
+          "mappedType": "text"
+        },
+        "password": {
+          "name": "password",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "comment": "The user password",
+          "mappedType": "text"
+        },
+        "phone_number": {
+          "name": "phone_number",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "comment": "The user phoneNumber",
+          "mappedType": "text"
+        },
+        "is_verified": {
+          "name": "is_verified",
+          "type": "integer",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "default": "false",
+          "comment": "The user is Verified from otp or not",
+          "mappedType": "integer"
+        },
+        "is_loggedin": {
+          "name": "is_loggedin",
+          "type": "integer",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "default": "false",
+          "comment": "The user is Logged in or not",
+          "mappedType": "integer"
+        },
+        "salt": {
+          "name": "salt",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "comment": "The user salt for crypto hashing",
+          "mappedType": "text"
+        },
+        "otp": {
+          "name": "otp",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "comment": "The user otp",
+          "mappedType": "text"
+        },
+        "date of birth": {
+          "name": "date of birth",
+          "type": "datetime",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": true,
+          "length": 0,
+          "comment": "The user date of birth",
+          "mappedType": "datetime"
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "datetime",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": true,
+          "length": 0,
+          "default": "1715874884565",
+          "mappedType": "datetime"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "datetime",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": true,
+          "length": 0,
+          "default": "1715874884566",
+          "mappedType": "datetime"
+        },
+        "address_address_id": {
+          "name": "address_address_id",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": true,
+          "length": 36,
+          "mappedType": "text"
+        },
+        "cart_cart_id": {
+          "name": "cart_cart_id",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": true,
+          "length": 36,
+          "mappedType": "text"
+        },
+        "session_session_id": {
+          "name": "session_session_id",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": true,
+          "mappedType": "text"
+        }
+      },
+      "name": "users",
+      "indexes": [
+        {
+          "columnNames": [
+            "address_address_id"
+          ],
+          "composite": false,
+          "keyName": "users_address_address_id_unique",
+          "primary": false,
+          "unique": true
+        },
+        {
+          "columnNames": [
+            "cart_cart_id"
+          ],
+          "composite": false,
+          "keyName": "users_cart_cart_id_unique",
+          "primary": false,
+          "unique": true
+        },
+        {
+          "columnNames": [
+            "session_session_id"
+          ],
+          "composite": false,
+          "keyName": "users_session_session_id_unique",
+          "primary": false,
+          "unique": true
+        },
+        {
+          "keyName": "primary",
+          "columnNames": [
+            "user_id"
+          ],
+          "composite": false,
+          "primary": true,
+          "unique": true
+        }
+      ],
+      "checks": [],
+      "foreignKeys": {
+        "users_address_address_id_foreign": {
+          "constraintName": "users_address_address_id_foreign",
+          "columnNames": [
+            "address_address_id"
+          ],
+          "localTableName": "users",
+          "referencedColumnNames": [
+            "address_id"
+          ],
+          "referencedTableName": "addresses",
+          "deleteRule": "cascade",
+          "updateRule": "cascade"
+        },
+        "users_cart_cart_id_foreign": {
+          "constraintName": "users_cart_cart_id_foreign",
+          "columnNames": [
+            "cart_cart_id"
+          ],
+          "localTableName": "users",
+          "referencedColumnNames": [
+            "cart_id"
+          ],
+          "referencedTableName": "cart",
+          "deleteRule": "cascade",
+          "updateRule": "cascade"
+        },
+        "users_session_session_id_foreign": {
+          "constraintName": "users_session_session_id_foreign",
+          "columnNames": [
+            "session_session_id"
+          ],
+          "localTableName": "users",
+          "referencedColumnNames": [
+            "session_id"
+          ],
+          "referencedTableName": "user_session",
+          "deleteRule": "cascade",
+          "updateRule": "cascade"
+        }
+      }
+    },
+    {
+      "columns": {
+        "cart_id": {
+          "name": "cart_id",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "length": 36,
+          "comment": "The cart id",
+          "mappedType": "text"
+        },
+        "user_id": {
+          "name": "user_id",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "length": 36,
+          "comment": "Cart user ( owner ) id",
+          "mappedType": "text"
+        },
+        "user_user_id": {
+          "name": "user_user_id",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "length": 36,
+          "mappedType": "text"
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "datetime",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": true,
+          "length": 0,
+          "comment": "The cart created at",
+          "mappedType": "datetime"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "datetime",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": true,
+          "length": 0,
+          "comment": "The cart updated at",
+          "mappedType": "datetime"
+        }
+      },
+      "name": "cart",
+      "indexes": [
+        {
+          "columnNames": [
+            "user_user_id"
+          ],
+          "composite": false,
+          "keyName": "cart_user_user_id_unique",
+          "primary": false,
+          "unique": true
+        },
+        {
+          "keyName": "primary",
+          "columnNames": [
+            "cart_id"
+          ],
+          "composite": false,
+          "primary": true,
+          "unique": true
+        }
+      ],
+      "checks": [],
+      "foreignKeys": {
+        "cart_user_user_id_foreign": {
+          "constraintName": "cart_user_user_id_foreign",
+          "columnNames": [
+            "user_user_id"
+          ],
+          "localTableName": "cart",
+          "referencedColumnNames": [
+            "user_id"
+          ],
+          "referencedTableName": "users",
+          "updateRule": "cascade"
+        }
+      }
+    },
+    {
+      "columns": {
+        "cart_item_id": {
+          "name": "cart_item_id",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "length": 36,
+          "comment": "The cart item id",
+          "mappedType": "text"
+        },
+        "product_id": {
+          "name": "product_id",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "length": 36,
+          "comment": "The product id",
+          "mappedType": "text"
+        },
+        "quantity": {
+          "name": "quantity",
+          "type": "integer",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "comment": "The product quantity",
+          "mappedType": "integer"
+        },
+        "cart_cart_id": {
+          "name": "cart_cart_id",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "length": 36,
+          "mappedType": "text"
+        }
+      },
+      "name": "cart_items",
+      "indexes": [
+        {
+          "columnNames": [
+            "cart_cart_id"
+          ],
+          "composite": false,
+          "keyName": "cart_items_cart_cart_id_index",
+          "primary": false,
+          "unique": false
+        },
+        {
+          "keyName": "primary",
+          "columnNames": [
+            "cart_item_id"
+          ],
+          "composite": false,
+          "primary": true,
+          "unique": true
+        }
+      ],
+      "checks": [],
+      "foreignKeys": {
+        "cart_items_cart_cart_id_foreign": {
+          "constraintName": "cart_items_cart_cart_id_foreign",
+          "columnNames": [
+            "cart_cart_id"
+          ],
+          "localTableName": "cart_items",
+          "referencedColumnNames": [
+            "cart_id"
+          ],
+          "referencedTableName": "cart",
+          "updateRule": "cascade"
+        }
+      }
+    }
+  ]
+}

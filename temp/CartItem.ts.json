@@ -1,0 +1,60 @@
+{
+  "data": {
+    "properties": {
+      "cart_item_id": {
+        "name": "cart_item_id",
+        "reference": "scalar",
+        "primary": true,
+        "type": "uuid",
+        "comment": "The cart item id"
+      },
+      "product_id": {
+        "name": "product_id",
+        "reference": "scalar",
+        "type": "uuid",
+        "comment": "The product id",
+        "getter": false,
+        "setter": false
+      },
+      "quantity": {
+        "name": "quantity",
+        "reference": "scalar",
+        "type": "number",
+        "comment": "The product quantity",
+        "getter": false,
+        "setter": false
+      },
+      "cart": {
+        "name": "cart",
+        "reference": "m:1",
+        "cascade": [
+          "persist"
+        ],
+        "type": "Cart",
+        "owner": true
+      }
+    },
+    "primaryKeys": [
+      "cart_item_id"
+    ],
+    "filters": {},
+    "hooks": {},
+    "indexes": [],
+    "uniques": [],
+    "className": "CartItem",
+    "path": "./src/models/CartItem.ts",
+    "collection": "cart_items",
+    "name": "CartItem",
+    "abstract": false,
+    "constructorParams": [
+      "cartItem"
+    ],
+    "toJsonParams": [],
+    "useCache": true,
+    "compositePK": false,
+    "simplePK": true
+  },
+  "origin": "./src/models/CartItem.ts",
+  "hash": "719a731e002a9fd31bbff7959181f4cd",
+  "version": "5.9.0"
+}

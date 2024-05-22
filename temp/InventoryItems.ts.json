@@ -1,0 +1,84 @@
+{
+  "data": {
+    "properties": {
+      "inventory_item_id": {
+        "name": "inventory_item_id",
+        "reference": "scalar",
+        "primary": true,
+        "type": "uuid",
+        "comment": "The inventory item id"
+      },
+      "product_id": {
+        "name": "product_id",
+        "reference": "scalar",
+        "type": "uuid",
+        "comment": "The product id",
+        "getter": false,
+        "setter": false
+      },
+      "attributes": {
+        "name": "attributes",
+        "reference": "scalar",
+        "type": "object",
+        "comment": "The product attributes",
+        "getter": false,
+        "setter": false
+      },
+      "createdAt": {
+        "name": "createdAt",
+        "reference": "scalar",
+        "type": "datetime",
+        "nullable": true,
+        "default": 1715520212492,
+        "getter": false,
+        "setter": false,
+        "fieldNames": [
+          "created_at"
+        ]
+      },
+      "updateddAt": {
+        "name": "updateddAt",
+        "reference": "scalar",
+        "type": "datetime",
+        "nullable": true,
+        "default": 1715520212492,
+        "getter": false,
+        "setter": false,
+        "fieldNames": [
+          "updated_at"
+        ]
+      },
+      "inventory": {
+        "name": "inventory",
+        "reference": "m:1",
+        "cascade": [
+          "persist"
+        ],
+        "type": "Inventory",
+        "owner": true
+      }
+    },
+    "primaryKeys": [
+      "inventory_item_id"
+    ],
+    "filters": {},
+    "hooks": {},
+    "indexes": [],
+    "uniques": [],
+    "className": "InventoryItems",
+    "path": "./src/models/InventoryItem.ts",
+    "collection": "inventory_items",
+    "name": "InventoryItems",
+    "abstract": false,
+    "constructorParams": [
+      "inventoryItem"
+    ],
+    "toJsonParams": [],
+    "useCache": true,
+    "compositePK": false,
+    "simplePK": true
+  },
+  "origin": "./src/models/InventoryItem.ts",
+  "hash": "243a420591e09d3e9968b0be502f7e9b",
+  "version": "5.9.0"
+}
