@@ -155,7 +155,6 @@ export class User implements UserType {
             const { hash, salt } = await hashGenerate(password);
             this.password = hash;
             this.salt = salt;
-
             // send the otp now 
             const otpGenerated = await otpGenerate();
             this.otp = otpGenerated;
@@ -165,7 +164,6 @@ export class User implements UserType {
             const { hash, salt } = await hashGenerate(password);
             this.password = hash;
             this.salt = salt;
-
             this.sendMail("PASSWORDCHANGED");
       };
 

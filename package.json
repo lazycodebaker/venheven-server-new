@@ -5,7 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "dev": "npx nodemon --watch src --exec ts-node src/index.ts",
-    "build": "tsc -p .",
+    "build": "bun build src/index.ts --target node --outfile dist/index.js",
     "migration": "npx mikro-orm migration:create",
     "migration-initial": "npx mikro-orm migration:create --initial",
     "migration-up": "npx mikro-orm migration:up",

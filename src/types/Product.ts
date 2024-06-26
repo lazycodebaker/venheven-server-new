@@ -28,7 +28,7 @@ export const productSchema = z.object({
       }),
       tags: z.array(z.string()),
       createdAt: z.date().default(() => new Date()),
-      updateddAt: z.date().default(() => new Date()),
+      updatedAt: z.date().default(() => new Date()),
 });
 
 export type ProductType = z.infer<typeof productSchema>;

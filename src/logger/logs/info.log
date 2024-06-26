@@ -3766,3 +3766,11 @@
 {"level":"info","message":"User Already Logged In - lazycodebaker","service":"user-service"}
 {"level":"info","message":"Token verification for df49f6cc-4796-4085-9763-10156410a8b2","service":"user-service"}
 {"level":"info","message":"User Already Logged In - lazycodebaker","service":"user-service"}
+{"level":"info","message":"🚀 Express configured","service":"user-service"}
+{"level":"info","message":"🚀 Database ready","service":"user-service"}
+{"level":"info","message":"Connection to the database has been established successfully.","service":"user-service"}
+{"level":"info","message":"🚀 Apollo GraphQL Server ready ","service":"user-service"}
+{"level":"info","message":"🚀 Express configured","service":"user-service"}
+{"level":"info","message":"🚀 Database ready","service":"user-service"}
+{"level":"info","message":"Connection to the database has been established successfully.","service":"user-service"}
+{"level":"info","message":"🚀 Apollo GraphQL Server ready ","service":"user-service"}

@@ -107,7 +107,7 @@
         "reference": "scalar",
         "type": "datetime",
         "nullable": true,
-        "default": 1716116511523,
+        "default": 1717927958530,
         "getter": false,
         "setter": false,
         "fieldNames": [
@@ -119,7 +119,7 @@
         "reference": "scalar",
         "type": "datetime",
         "nullable": true,
-        "default": 1716116511523,
+        "default": 1717927958530,
         "getter": false,
         "setter": false,
         "fieldNames": [
@@ -181,6 +181,6 @@
     "simplePK": true
   },
   "origin": "./src/models/User.ts",
-  "hash": "518f10b0eb579cee8dfd5ff5715ca829",
+  "hash": "5afd656bc6befae8eb561d205363a596",
   "version": "5.9.0"
 }

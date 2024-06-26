@@ -2,6 +2,7 @@
 import { Entity, PrimaryKey, Property } from "@mikro-orm/core";
 
 import { ProductType } from "../types/Product";
+import { v4 } from "uuid";
 
 @Entity({ tableName: "products" })
 export class Product implements ProductType {
@@ -110,11 +111,32 @@ export class Product implements ProductType {
         default: Date.now(),
         onUpdate: () => new Date(),
     })
-    updateddAt!: Date;
+    updatedAt!: Date;
 
-    constructor(product: ProductType) {
-        Object.assign(this, product);
-    }
+    constructor(product: Omit<ProductType, "product_id" | "images" | "videos" | "ratings" | "reviews" | "createdAt" | "updatedAt">) {
+        this.product_id = v4();
+        this.name = product.name;
+        this.category = product.category;
+        this.description = product.description;
+        this.price = product.price;
+
+        // image set 
+        // videos set 
+        this.ratings = { average: 0, count: 0 } as ProductType['ratings'];
+        this.reviews = [] as ProductType['reviews'];
+        this.attributes = product.attributes;
+        this.tags = product.tags;
+        this.createdAt = new Date();
+        this.updatedAt = new Date();
+    };
+
+    async setImages(): Promise<void> {
+
+    };
+
+    async setVideos(): Promise<void> {
+
+    };
 }
 
 

@@ -5,7 +5,7 @@ import {
       GraphQLBoolean,
       GraphQLFieldConfigMap,
       GraphQLObjectType,
-      GraphQLOutputType, 
+      GraphQLOutputType,
       GraphQLString
 } from 'graphql';
 
@@ -26,7 +26,7 @@ export type Fields<T> = {
 
 export const UserSchema: GraphQLObjectType<UserType, TContext> = new GraphQLObjectType({
       name: 'User',
-      description: 'User Model Type',
+      description: 'User Model Schema For GraphQL',
       fields: (): Fields<UserType> & GraphQLFieldConfigMap<UserType, TContext> => ({
             user_id: { type: GraphQLUUID, description: 'User ID' },
             username: { type: GraphQLString, description: 'User Username' },
@@ -44,7 +44,6 @@ export const UserSchema: GraphQLObjectType<UserType, TContext> = new GraphQLObje
                   type: AddressSchema,
                   description: 'User Address',
                   resolve: async (source: any, args: any, context: TContext, info: any) => {
-                        console.log("Source", source, "args", args, "context", context, "info", info);
                         const { user_id } = source;
                         const address = await context.em.getRepository(Address).findOne({ user_id });
                         return address;

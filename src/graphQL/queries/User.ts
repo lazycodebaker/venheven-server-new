@@ -1,6 +1,6 @@
 
 // Third-Party Imports
-import { GraphQLFieldConfig, GraphQLList, GraphQLString } from "graphql";
+import { GraphQLFieldConfig, GraphQLList, GraphQLObjectType, GraphQLString } from "graphql";
 
 // Custom Imports
 
@@ -42,7 +42,6 @@ const UserByToken: {
       resolve: async (_, args, context: TContext): Promise<any> => {
             const _token = context.request.headers.authorization?.split(" ")[1] || ""
             const user_id = tokenVerify(_token)
-
             const user: UserType = (await context.em.fork().findOne(User, { user_id }))!;
             return user!;
       }

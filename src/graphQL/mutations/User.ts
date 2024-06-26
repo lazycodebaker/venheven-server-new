@@ -2,7 +2,6 @@
 // Third-Party Imports 
 import { GraphQLArgumentConfig, GraphQLFieldConfig, GraphQLString } from "graphql";
 import { GraphQLDate, GraphQLEmailAddress, GraphQLPhoneNumber } from "graphql-scalars";
-
 import type { ObjMap } from 'graphql/jsutils/ObjMap';
 
 // Custom Imports
@@ -14,7 +13,6 @@ import { MessageSchema } from "../typedefs/Message";
 import { tokenVerify } from "../../utils/tokenVerify";
 import logger from '../../logger/Logging';
 import { AddressType, UserType } from '../../types/User';
-
 import { Address } from '../../models/Address';
 
 type TCreateUserArgs = {
